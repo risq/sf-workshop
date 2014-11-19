@@ -1,0 +1,14 @@
+tr li {
+	list-style: none;
+	display: inline-block;
+}
+
+tr ul {
+	padding: 0;
+	margin: 0;
+}
+
+
+.well form.form-horizontal button[type="submit"] {
+	float: right!important;
+}

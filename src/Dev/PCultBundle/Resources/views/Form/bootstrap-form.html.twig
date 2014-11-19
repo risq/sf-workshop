@@ -89,9 +89,7 @@
     {% if label is empty %}
         {% set label = name|humanize %}
     {% endif %}
-    <div class="col-md-9 col-md-offset-3">
-        <button type="{{ type|default('button') }}" {{ block('button_attributes') }} class="btn btn-default">{{ label|trans({}, translation_domain) }}</button>
-    </div>
+        <button type="{{ type|default('button') }}" {{ block('button_attributes') }} class="btn btn-primary">{{ label|trans({}, translation_domain) }}</button>
 {% endspaceless %}
 {% endblock button_widget %}
     
