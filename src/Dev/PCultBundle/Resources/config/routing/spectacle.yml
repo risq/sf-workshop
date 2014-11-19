@@ -1,0 +1,30 @@
+spectacle:
+    pattern:  /
+    defaults: { _controller: "DevPCultBundle:Spectacle:index" }
+
+spectacle_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "DevPCultBundle:Spectacle:show" }
+
+spectacle_new:
+    pattern:  /new
+    defaults: { _controller: "DevPCultBundle:Spectacle:new" }
+
+spectacle_create:
+    pattern:  /create
+    defaults: { _controller: "DevPCultBundle:Spectacle:create" }
+    requirements: { _method: post }
+
+spectacle_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "DevPCultBundle:Spectacle:edit" }
+
+spectacle_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "DevPCultBundle:Spectacle:update" }
+    requirements: { _method: post|put }
+
+spectacle_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "DevPCultBundle:Spectacle:delete" }
+    requirements: { _method: post|delete }

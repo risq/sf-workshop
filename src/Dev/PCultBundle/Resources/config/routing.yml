@@ -1,0 +1,7 @@
+dev_p_cult_spectacle:
+    resource: "@DevPCultBundle/Resources/config/routing/spectacle.yml"
+    prefix:   /spectacle
+
+dev_p_cult_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: DevPCultBundle:Default:index }

@@ -1,0 +1,4 @@
+dev_p_cult:
+    resource: "@DevPCultBundle/Resources/config/routing.yml"
+    prefix:   /
+

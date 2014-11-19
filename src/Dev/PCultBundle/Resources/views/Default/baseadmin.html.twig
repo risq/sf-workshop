@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Parcours Culturel :  Panel Admin {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BackOffice du festival Cinémino">
+    <meta name="author" content="Bibi">
+
+    <link href="{{ asset('bundles/devpcult/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+ 
+
+  </head>
+
+  <body class="preview" data-spy="scroll" data-target=".subnav" data-offset="80">
+
+
+<!-- Navbar
+================================================== -->
+      <section id="navbar">
+      <div class="container" style="width: auto;">
+          <div class="row">
+             <div class="col-lg-5">
+                 <h1>Backoffice Parcours Culturel</h1>
+             </div>
+          </div>
+          
+          <nav class="navbar navbar-inverse">
+          <ul class="nav navbar-nav">   
+            <li id="idspectacle"><a href="{{ path('spectacle') }}">Spectacle</a></li>
+
+          </ul>
+          <ul class="nav pull-right">
+            {# <li><a href="{{ path('dev_corp_parcours_culturel_homepage') }}">Accéder au site</a></li> #}
+          </ul>
+          </nav><!-- /navbar -->
+      </div>
+      </section>
+      <div class="container" style="width: auto;">
+      {% block body %}
+
+      {% endblock %}
+         <section id ="information">
+          
+          {% block info %}{% endblock %}
+          
+
+         
+
+          
+         </section>
+         
+         <!-- Footer
+          ================================================== -->
+
+          <footer id="footer">
+              <hr>
+            <p class="pull-right"><a href="#">Revenir en haut</a></p>
+            <div class="links">
+              <a href="#">BackOffice Parcours Culturel</a>
+            </div>
+               Basé sur <a target="_blank" href="http://twitter.github.com/bootstrap/">Bootstrap</a> Icons de <a target="_blank" href="http://glyphicons.com/">Glyphicons</a><br>Web fonts de <a target="_blank" href="http://www.google.com/webfonts">Google</a>.</p>
+          </footer>
+
+      </div><!-- /container -->
+
+    {% block javascripts %}
+
+      <script type="text/javascript" src="{{ asset('bundles/DevCorpParcoursCulturelBundle/js/bootstrap.min.js') }}"></script>  
+    {% endblock %}    
+
+ </body>
+</html>
