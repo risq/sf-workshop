@@ -1,0 +1,74 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+Liste des Representation
+{% endblock %}
+
+{% block page_title %}
+Liste des Representation
+{% endblock %}
+
+{% block page_subtitle %}{% endblock %}
+
+{% block body -%}
+
+    <div class="row">
+        <div class="col-xs-12">
+            {% for flashMessage in app.session.flashbag.get('danger') %}
+            <div class="alert alert-dismissable alert-danger">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                {{ flashMessage }}
+            </div>
+            {% endfor %}
+            {% for flashMessage in app.session.flashbag.get('warning') %}
+            <div class="alert alert-dismissable alert-warning">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                {{ flashMessage }}
+            </div>
+            {% endfor %}
+            {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="alert alert-dismissable alert-success">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                {{ flashMessage }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <table class="records_list table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Jour</th>
+                <th>Heure</th>
+                <th>Spectacle</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('representation_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{% if entity.jour %}{{ entity.jour|date('d/m/Y') }}{% endif %}</td>
+                <td>{{ entity.heure|date('H:i') }}</td>
+                <td><a href="{{ path('spectacle_show', { 'id': entity.spectacle.id }) }}">{{ entity.spectacle }}</a></td>
+                <td>
+                <ul>
+                    <li>                        <a href="{{ path('representation_show', { 'id': entity.id }) }}"> voir </a>
+                                            </li>
+                    <li>                        <a href="{{ path('representation_edit', { 'id': entity.id }) }}"> éditer </a>                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('representation_new') }}">
+                Ajouter
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

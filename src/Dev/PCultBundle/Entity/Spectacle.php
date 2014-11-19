@@ -151,4 +151,8 @@ class Spectacle
     {
         return $this->metteurEnScene;
     }
+
+    public function __toString() {
+        return $this->nom . ' - ' . $this->metteurEnScene;
+    }
 }

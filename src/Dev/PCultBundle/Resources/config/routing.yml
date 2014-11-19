@@ -1,3 +1,7 @@
+dev_p_cult_representation:
+    resource: "@DevPCultBundle/Resources/config/routing/representation.yml"
+    prefix:   /representation
+
 dev_p_cult_spectacle:
     resource: "@DevPCultBundle/Resources/config/routing/spectacle.yml"
     prefix:   /spectacle

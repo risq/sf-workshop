@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+Création d'un Representation
+{% endblock %}
+
+{% block page_title %}
+Création d'un Representation
+{% endblock %}
+
+{% block page_subtitle %}{% endblock %}
+
+{% block body -%}
+
+    <div class="row">
+        <div class="col-xs-12">
+            {% for flashMessage in app.session.flashbag.get('danger') %}
+            <div class="alert alert-dismissable alert-danger">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                {{ flashMessage }}
+            </div>
+            {% endfor %}
+            {% for flashMessage in app.session.flashbag.get('warning') %}
+            <div class="alert alert-dismissable alert-warning">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                {{ flashMessage }}
+            </div>
+            {% endfor %}
+            {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="alert alert-dismissable alert-success">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                {{ flashMessage }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="well bs-component col-sm-6">
+            {% form_theme form 'DevPCultBundle:Form:bootstrap-form.html.twig' %}
+            {{ form(form) }}
+        </div>
+    </div>
+
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('representation') }}">
+            Retourner à la liste
+        </a>
+    </li>
+</ul>
+{% endblock %}

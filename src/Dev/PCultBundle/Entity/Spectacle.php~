@@ -128,4 +128,27 @@ class Spectacle
     {
         return $this->image;
     }
+
+    /**
+     * Set metteurEnScene
+     *
+     * @param string $metteurEnScene
+     * @return Spectacle
+     */
+    public function setMetteurEnScene($metteurEnScene)
+    {
+        $this->metteurEnScene = $metteurEnScene;
+
+        return $this;
+    }
+
+    /**
+     * Get metteurEnScene
+     *
+     * @return string 
+     */
+    public function getMetteurEnScene()
+    {
+        return $this->metteurEnScene;
+    }
 }
