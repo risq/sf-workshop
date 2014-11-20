@@ -49,6 +49,11 @@ class Spectacle
      */
     private $image;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Dev\PCultBundle\Entity\Representation", mappedBy="spectacle")
+     */
+    private $representations;
+
 
     /**
      * Get id
@@ -150,5 +155,49 @@ class Spectacle
     public function getMetteurEnScene()
     {
         return $this->metteurEnScene;
+    }
+
+    public function __toString() {
+        return $this->nom . ' - ' . $this->metteurEnScene;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->representations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add representations
+     *
+     * @param \Dev\PCultBundle\Entity\Representation $representations
+     * @return Spectacle
+     */
+    public function addRepresentation(\Dev\PCultBundle\Entity\Representation $representations)
+    {
+        $this->representations[] = $representations;
+
+        return $this;
+    }
+
+    /**
+     * Remove representations
+     *
+     * @param \Dev\PCultBundle\Entity\Representation $representations
+     */
+    public function removeRepresentation(\Dev\PCultBundle\Entity\Representation $representations)
+    {
+        $this->representations->removeElement($representations);
+    }
+
+    /**
+     * Get representations
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRepresentations()
+    {
+        return $this->representations;
     }
 }

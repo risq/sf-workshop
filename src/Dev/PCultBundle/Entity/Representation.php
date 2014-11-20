@@ -36,7 +36,8 @@ class Representation
     private $heure;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Dev\PCultBundle\Entity\Spectacle")
+     * @ORM\ManyToOne(targetEntity="Dev\PCultBundle\Entity\Spectacle", inversedBy="representations")
+     * @ORM\JoinColumn(name="spectacle_id", referencedColumnName="id")
      */
     private $spectacle;
 

@@ -3,7 +3,6 @@
 namespace Dev\PCultBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Dev\PCultBundle\Entity\Spectacle as Spectacle;
 
 /**
  * Representation
@@ -37,7 +36,8 @@ class Representation
     private $heure;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Dev\PCultBundle\Entity\Spectacle")
+     * @ORM\ManyToOne(targetEntity="Dev\PCultBundle\Entity\Spectacle", inversedBy="representations")
+     * @ORM\JoinColumn(name="spectacle_id", referencedColumnName="id")
      */
     private $spectacle;
 
@@ -97,4 +97,27 @@ class Representation
         return $this->heure;
     }
 
+
+    /**
+     * Set spectacle
+     *
+     * @param \Dev\PCultBundle\Entity\Spectacle $spectacle
+     * @return Representation
+     */
+    public function setSpectacle(\Dev\PCultBundle\Entity\Spectacle $spectacle = null)
+    {
+        $this->spectacle = $spectacle;
+
+        return $this;
+    }
+
+    /**
+     * Get spectacle
+     *
+     * @return \Dev\PCultBundle\Entity\Spectacle 
+     */
+    public function getSpectacle()
+    {
+        return $this->spectacle;
+    }
 }
